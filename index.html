@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gijón - Inicio</title>
+    <link rel="stylesheet" type="text/css" href="estilo/estilo.css">
+    <link rel="stylesheet" type="text/css" href="estilo/layout.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/Carrusel.js"></script>
+    <script src="js/Noticias.js"></script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html" class="active">Página principal</a></li>
+            <li><a href="gastronomia.html">Gastronomía</a></li>
+            <li><a href="rutas.html">Rutas</a></li>
+            <li><a href="meteorologia.html">Meteorología</a></li>
+            <li><a href="juego.html">Juego</a></li>
+            <li><a href="reservas.php">Reservas</a></li>
+            <li><a href="ayuda.html">Ayuda</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h1>Gijón</h1>
+        <section>
+            <h2>Descubre Gijón</h2>
+            <article>
+                <button>◄</button>
+                <figure>
+                    <img src="multimedia/Plaza_Mayor.jpg" alt="Plaza Mayor de Gijón">
+                    <figcaption>Centro histórico y corazón de la ciudad</figcaption>
+                </figure>
+                <button>►</button>
+            </article>
+        </section>
+
+        <section>
+            <h2>Noticias de Gijón</h2>
+            <article>
+                <!-- Las noticias se insertarán aquí -->
+            </article>
+        </section>
+    </main>
+    
+    <script>
+        // Inicializar componentes cuando el DOM esté listo
+        $(document).ready(() => {
+            new Carrusel('main > section:first-of-type article');
+            new Noticias('main > section:nth-child(3) article');
+        });
+    </script>
+</body>
+</html>

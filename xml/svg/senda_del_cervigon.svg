@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="500" viewBox="-50 -50 900 550">
+<title>Perfil de altitud - Senda del Cervigón</title>
+<rect x="650" y="10" width="200" height="80" fill="white" stroke="black"/>
+<text x="660" y="30" font-size="12">Leyenda:</text>
+<line x1="660" y1="45" x2="700" y2="45" style="stroke:red;stroke-width:2"/>
+<text x="710" y="50" font-size="12">Perfil de altitud</text>
+<line x1="660" y1="65" x2="700" y2="65" style="stroke:blue;stroke-dasharray:5,5"/>
+<text x="710" y="70" font-size="12">Nivel del mar</text>
+<line x1="0" y1="400" x2="800" y2="400" style="stroke:blue;stroke-width:1;stroke-dasharray:5,5"/>
+<text x="10" y="420" font-size="12" fill="blue">Nivel del mar (0m)</text>
+<polyline points="0,260 0,260 15,40 20,120 170,-420 185,-1440" style="fill:none;stroke:red;stroke-width:2"/>
+<line x1="0" y1="260" x2="0" y2="400" style="stroke:gray;stroke-width:1;stroke-dasharray:2,2"/>
+<text x="0" y="250" font-size="10" transform="rotate(-45,0,250)">Sombras de Luz</text>
+<line x1="0" y1="260" x2="0" y2="400" style="stroke:gray;stroke-width:1;stroke-dasharray:2,2"/>
+<text x="0" y="250" font-size="10" transform="rotate(-45,0,250)">Sombras de Luz</text>
+<line x1="15" y1="40" x2="15" y2="400" style="stroke:gray;stroke-width:1;stroke-dasharray:2,2"/>
+<text x="15" y="30" font-size="10" transform="rotate(-45,15,30)">Solidaridad</text>
+<line x1="20" y1="120" x2="20" y2="400" style="stroke:gray;stroke-width:1;stroke-dasharray:2,2"/>
+<text x="20" y="110" font-size="10" transform="rotate(-45,20,110)">La Madre del Emigrante ("La Lloca")</text>
+<line x1="170" y1="-420" x2="170" y2="400" style="stroke:gray;stroke-width:1;stroke-dasharray:2,2"/>
+<text x="170" y="-430" font-size="10" transform="rotate(-45,170,-430)">Homenaje a Galileo Galilei XV</text>
+<line x1="185" y1="-1440" x2="185" y2="400" style="stroke:gray;stroke-width:1;stroke-dasharray:2,2"/>
+<text x="185" y="-1450" font-size="10" transform="rotate(-45,185,-1450)">Mirador de la Providencia</text>
+<line x1="0" y1="400" x2="800" y2="400" style="stroke:black;stroke-width:1"/>
+<line x1="0" y1="0" x2="0" y2="400" style="stroke:black;stroke-width:1"/>
+<text x="-20" y="400" font-size="10">0.0m</text>
+<text x="-20" y="300" font-size="10">5.0m</text>
+<text x="-20" y="200" font-size="10">10.0m</text>
+<text x="-20" y="100" font-size="10">15.0m</text>
+<text x="-20" y="0" font-size="10">20.0m</text>
+<text x="0" y="420" font-size="10">0m</text>
+<text x="200" y="420" font-size="10">2000m</text>
+<text x="400" y="420" font-size="10">4000m</text>
+<text x="600" y="420" font-size="10">6000m</text>
+<text x="800" y="420" font-size="10">8000m</text>
+</svg>

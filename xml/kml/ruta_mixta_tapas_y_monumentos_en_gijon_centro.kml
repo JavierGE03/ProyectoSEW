@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+<Placemark>
+<name>Ruta Mixta: Tapas y Monumentos en Gijón Centro</name>
+<LineString>
+<extrude>1</extrude>
+<tessellate>1</tessellate>
+<coordinates>
+-5.6602,43.5417,5
+-5.6602,43.5417,5
+-5.6628,43.5422,6
+-5.6644,43.5435,5
+-5.6640,43.5438,7
+-5.6635,43.5430,5
+</coordinates>
+<altitudeMode>relativeToGround</altitudeMode>
+</LineString>
+<Style id='lineaRoja'>
+<LineStyle>
+<color>#ff0000ff</color>
+<width>5</width>
+</LineStyle>
+</Style>
+</Placemark>
+</Document>
+</kml>

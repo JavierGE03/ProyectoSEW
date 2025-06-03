@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rutas SYSTEM "rutas.dtd">
+<rutas xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="rutas.xsd">    
+    <ruta>
+        <nombre>Senda del Cervigón</nombre>
+        <tipo>Paisajística</tipo>
+        <transporte>A pie</transporte>
+        <horario>
+            <fecha_inicio opcional="true">2024-06-01</fecha_inicio>
+            <hora_inicio opcional="true">10:00</hora_inicio>
+            <duracion>3 horas</duracion>
+        </horario>
+        <agencia>Sin agencia</agencia>
+        <descripcion>
+            La Senda del Cervigón es un recorrido costero que conecta la playa de San Lorenzo 
+            con la zona del Rinconín. Este paseo litoral ofrece impresionantes vistas del 
+            mar Cantábrico y cuenta con zonas verdes y áreas de descanso.
+        </descripcion>
+        <publico_objetivo>Apto para todos los públicos, ideal para familias y personas mayores</publico_objetivo>
+        <punto_inicio>
+            <lugar>Sombras de Luz</lugar>
+            <direccion>Paseo de Gijon</direccion>
+            <coordenadas>
+                <longitud>-5.6457</longitud>
+                <latitud>43.5439</latitud>
+                <altitud unidades="m">7</altitud>
+            </coordenadas>
+        </punto_inicio>
+        <referencias>
+            <referencia>https://www.gijon.es/es/sendacervigon</referencia>
+            <referencia>https://www.turismoasturias.es/es/-/blogs/la-senda-del-cervigon-en-gijon</referencia>
+            <referencia>https://es.wikiloc.com/rutas-senderismo/ruta-costera-senda-del-cervigon-8569846</referencia>
+        </referencias>
+        <valoracion>9</valoracion>
+        <hitos>
+            <hito>
+                <nombre>Sombras de Luz</nombre>
+                <descripcion>Obra de Fernando Alba Álvarez, erigida en 1998. Consta de planchas de acero corten perforadas orientadas a los puntos cardinales, que crean juegos de luz y sombra.</descripcion>
+                <coordenadas>
+                    <longitud>-5.6457</longitud>
+                    <latitud>43.5439</latitud>
+                    <altitud unidades="m">7</altitud>
+                </coordenadas>
+                <distancia_anterior unidades="m">0</distancia_anterior>
+                <fotos>
+                    <foto>/multimedia/Sombras.jpg</foto>
+                </fotos>
+            </hito>
+           <hito>
+            <nombre>Solidaridad</nombre>
+            <descripcion>Escultura de acero inoxidable creada por Pepe Noja en 1999, ubicada en el Parque del Rinconín. Representa cadenas entrelazadas con eslabones abiertos, simbolizando la unión y la libertad.</descripcion>
+            <coordenadas>
+                <longitud>-5.6458</longitud>
+                <latitud>43.5440</latitud>
+                <altitud unidades="m">18</altitud>
+            </coordenadas>
+            <distancia_anterior unidades="m">150</distancia_anterior>
+            <fotos>
+                <foto>/multimedia/escultura-solidaridad.jpg</foto>
+            </fotos>
+        </hito>
+
+        <hito>
+            <nombre>La Madre del Emigrante ("La Lloca")</nombre>
+            <descripcion>Escultura de Ramón Muriedas que representa a una madre asturiana despidiendo a sus hijos que emigran. Emblemática por su expresividad y ubicación junto al mar.</descripcion>
+            <coordenadas>
+                <longitud>-5.6454</longitud>
+                <latitud>43.5441</latitud>
+                <altitud unidades="m">14</altitud>
+            </coordenadas>
+            <distancia_anterior unidades="m">50</distancia_anterior>
+            <fotos>
+                <foto>/multimedia/Lloca.jpg</foto>
+            </fotos>
+        </hito>
+        
+
+        <hito>
+            <nombre>Homenaje a Galileo Galilei XV</nombre>
+            <descripcion>Escultura de Amadeo Gabino compuesta por dos estructuras semicirculares de acero corten, en homenaje al astrónomo Galileo Galilei.</descripcion>
+            <coordenadas>
+                <longitud>-5.6194</longitud>
+                <latitud>43.5567</latitud>
+                <altitud unidades="m">41</altitud>
+            </coordenadas>
+            <distancia_anterior unidades="m">1500</distancia_anterior>
+            <fotos>
+                <foto>/multimedia/Galileo_Gijón.jpg</foto>
+            </fotos>
+        </hito>
+
+        <hito>
+            <nombre>Mirador de la Providencia</nombre>
+            <descripcion>Mirador en forma de proa de barco que ofrece vistas panorámicas del Cantábrico y de la ciudad de Gijón. Lugar ideal para descansar y contemplar el paisaje.</descripcion>
+            <coordenadas>
+                <longitud>-5.6186</longitud>
+                <latitud>43.5540</latitud>
+                <altitud unidades="m">92</altitud>
+            </coordenadas>
+            <distancia_anterior unidades="m">150</distancia_anterior>
+            <fotos>
+                <foto>/multimedia/Providencia.jpg</foto>
+            </fotos>
+        </hito>
+
+        </hitos>
+        <planimetria>kml/senda_del_cervigon.kml</planimetria>
+        <altimetria>svg/senda_del_cervigon.svg</altimetria>
+    </ruta>
+    
+    <ruta>
+        <nombre>Ruta Gastronómica por Gijón Centro</nombre>
+        <tipo>Gastronómica</tipo>
+        <transporte>A pie</transporte>
+        <horario>
+            <fecha_inicio opcional="true">2024-06-01</fecha_inicio>
+            <hora_inicio opcional="true">13:00</hora_inicio>
+            <duracion>2 horas</duracion>
+        </horario>
+        <agencia>Sin agencia</agencia>
+        <descripcion>
+            Recorrido por cinco locales gastronómicos del centro de Gijón que representan la diversidad culinaria de la ciudad: desde la cocina fusión hasta productos gourmet asturianos y la tradicional sidra.
+        </descripcion>
+        <publico_objetivo>Amantes de la gastronomía, turistas, grupos de amigos y parejas</publico_objetivo>
+        <punto_inicio>
+            <lugar>Umami Gijón</lugar>
+            <direccion>Calle Capua, 7, Gijón</direccion>
+            <coordenadas>
+                <longitud>-5.6631</longitud>
+                <latitud>43.5393</latitud>
+                <altitud unidades="m">5</altitud>
+            </coordenadas>
+        </punto_inicio>
+        <referencias>
+            <referencia>https://www.elrincondesele.com/experiencias-gastronomicas-gijon/</referencia>
+            <referencia>https://www.tripadvisor.es/Attractions-g187451-Activities-c47-t175-Gijon_Asturias.html</referencia>
+            <referencia>https://www.minube.com/categorias/iglesias-gijon</referencia>
+        </referencias>
+        <valoracion>9</valoracion>
+        <hitos>
+            <hito>
+                <nombre>Umami Gijón</nombre>
+                <descripcion>Restaurante de cocina fusión peruana, japonesa, mexicana y asturiana, situado en el centro urbano.</descripcion>
+                <coordenadas>
+                    <longitud>-5.6631</longitud>
+                    <latitud>43.5393</latitud>
+                    <altitud unidades="m">5</altitud>
+                </coordenadas>
+                <distancia_anterior unidades="m">0</distancia_anterior>
+                <fotos>
+                    <foto>/multimedia/umami.jpg</foto>
+                </fotos>
+            </hito>
+            <hito>
+                <nombre>La Gijonesa</nombre>
+                <descripcion>Tienda gourmet de productos asturianos con degustaciones de quesos, embutidos y conservas.</descripcion>
+                <coordenadas>
+                    <longitud>-5.6642</longitud>
+                    <latitud>43.5403</latitud>
+                    <altitud unidades="m">5</altitud>
+                </coordenadas>
+                <distancia_anterior unidades="m">800</distancia_anterior>
+                <fotos>
+                    <foto>/multimedia/Gijonesa.jpg</foto>
+                </fotos>
+            </hito>
+            <hito>
+                <nombre>Café Dindurra</nombre>
+                <descripcion>Histórico café gijonés con ambiente modernista, ideal para una parada dulce o un vermut tradicional.</descripcion>
+                <coordenadas>
+                    <longitud>-5.6625</longitud>
+                    <latitud>43.5399</latitud>
+                    <altitud unidades="m">6</altitud>
+                </coordenadas>
+                <distancia_anterior unidades="m">100</distancia_anterior>
+                <fotos>
+                    <foto>/multimedia/Dindurra.jpg</foto>
+                </fotos>
+            </hito>
+            <hito>
+                <nombre>Coalla</nombre>
+                <descripcion>Espacio gastronómico con una excelente selección de vinos, productos delicatessen y charcutería premium.</descripcion>
+                <coordenadas>
+                    <longitud>-5.6648</longitud>
+                    <latitud>43.5410</latitud>
+                    <altitud unidades="m">6</altitud>
+                </coordenadas>
+                <distancia_anterior unidades="m">600</distancia_anterior>
+                <fotos>
+                    <foto>/multimedia/coalla.jpg</foto>
+                </fotos>
+            </hito>
+            <hito>
+                <nombre>Zascandil</nombre>
+                <descripcion>Restaurante que ofrece cocina de mercado asturiana con un excelente trato al producto y servicio cercano.</descripcion>
+                <coordenadas>
+                    <longitud>-5.6660</longitud>
+                    <latitud>43.5409</latitud>
+                    <altitud unidades="m">6</altitud>
+                </coordenadas>
+                <distancia_anterior unidades="m">300</distancia_anterior>
+                <fotos>
+                    <foto>/multimedia/Zascandil.jpg</foto>
+                </fotos>
+            </hito>
+        </hitos>
+        <planimetria>kml/ruta_gastronomica_por_gijon_centro.kml</planimetria>
+        <altimetria>svg/ruta_gastronomica_por_gijon_centro.svg</altimetria>
+    </ruta>
+    <ruta>
+        <nombre>Ruta Mixta: Tapas y Monumentos en Gijón Centro</nombre>
+        <tipo>Mixta tapas y monumentos</tipo>
+        <transporte>A pie</transporte>
+        <horario>
+            <fecha_inicio opcional="true">2025-06-01</fecha_inicio>
+            <hora_inicio opcional="true">12:00</hora_inicio>
+            <duracion>3 horas</duracion>
+        </horario>
+        <agencia>Sin agencia</agencia>
+        <descripcion>
+            Ruta que combina la degustación de tapas en locales emblemáticos con la visita a monumentos históricos en el centro de Gijón, ofreciendo una experiencia cultural y gastronómica única.
+        </descripcion>
+        <publico_objetivo>Turistas, amantes de la gastronomía y la historia</publico_objetivo>
+        <punto_inicio>
+            <lugar>Sidrería Puente Romano</lugar>
+            <direccion>Calle Peñalba, 18, 33201 Gijón</direccion>
+            <coordenadas>
+                <longitud>-5.6602</longitud>
+                <latitud>43.5417</latitud>
+                <altitud unidades="m">5</altitud>
+            </coordenadas>
+        </punto_inicio>
+        <referencias>
+            <referencia>https://www.elrincondesele.com/experiencias-gastronomicas-gijon/</referencia>
+            <referencia>https://www.tripadvisor.es/Attractions-g187451-Activities-c47-t175-Gijon_Asturias.html</referencia>
+            <referencia>https://www.minube.com/categorias/iglesias-gijon</referencia>
+        </referencias>
+        <valoracion>9</valoracion>
+        <hitos>
+            <hito>
+                <nombre>Sidrería Puente Romano</nombre>
+                <descripcion>Sidrería tradicional que ofrece una amplia selección de sidras y platos típicos asturianos en un ambiente auténtico y familiar.</descripcion>
+                <coordenadas>
+                    <longitud>-5.6602</longitud>
+                    <latitud>43.5417</latitud>
+                    <altitud unidades="m">5</altitud>
+                </coordenadas>
+                <distancia_anterior unidades="m">0</distancia_anterior>
+                <fotos>
+                    <foto>/multimedia/puente-romano.jpg</foto>
+                </fotos>
+            </hito>
+            <hito>
+                <nombre>Iglesia de San Pedro</nombre>
+                <descripcion>Templo católico de estilo historicista, situado al final de la playa de San Lorenzo.</descripcion>
+                <coordenadas>
+                    <longitud>-5.6628</longitud>
+                    <latitud>43.5422</latitud>
+                    <altitud unidades="m">6</altitud>
+                </coordenadas>
+                <distancia_anterior unidades="m">850</distancia_anterior>
+                <fotos>
+                    <foto>/multimedia/Sanpedro.jpg</foto>
+                </fotos>
+            </hito>
+            <hito>
+                <nombre>Plaza Mayor de Gijón</nombre>
+                <descripcion>Centro neurálgico de la ciudad, rodeado de edificios históricos y sede del Ayuntamiento.</descripcion>
+                <coordenadas>
+                    <longitud>-5.6644</longitud>
+                    <latitud>43.5435</latitud>
+                    <altitud unidades="m">5</altitud>
+                </coordenadas>
+                <distancia_anterior unidades="m">170</distancia_anterior>
+                <fotos>
+                    <foto>/multimedia/Plaza_mayor.jpg</foto>
+                </fotos>
+            </hito>
+            <hito>
+                <nombre>Basílica del Sagrado Corazón</nombre>
+                <descripcion>Templo neogótico conocido como "La Iglesiona", destacado por su arquitectura y simbolismo religioso.</descripcion>
+                <coordenadas>
+                    <longitud>-5.6640</longitud>
+                    <latitud>43.5438</latitud>
+                    <altitud unidades="m">7</altitud>
+                </coordenadas>
+                <distancia_anterior unidades="m">400</distancia_anterior>
+                <fotos>
+                    <foto>/multimedia/basilica.jpg</foto>
+                </fotos>
+            </hito>
+            <hito>
+                <nombre>Sidrería Tierra Astur</nombre>
+                <descripcion>Sidrería tradicional asturiana, famosa por su cocina regional y ambiente acogedor.</descripcion>
+                <coordenadas>
+                    <longitud>-5.6635</longitud>
+                    <latitud>43.5430</latitud>
+                    <altitud unidades="m">5</altitud>
+                </coordenadas>
+                <distancia_anterior unidades="m">1200</distancia_anterior>
+                <fotos>
+                    <foto>/multimedia/tierra_astur.jpg</foto>
+                </fotos>
+            </hito>
+        </hitos>
+        <planimetria>kml/ruta_mixta_tapas_y_monumentos_en_gijon_centro.kml</planimetria>
+        <altimetria>svg/ruta_mixta_tapas_y_monumentos_en_gijon_centro.svg</altimetria>
+    </ruta>
+
+</rutas>

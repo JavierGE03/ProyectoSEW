@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+<Placemark>
+<name>Ruta Gastronómica por Gijón Centro</name>
+<LineString>
+<extrude>1</extrude>
+<tessellate>1</tessellate>
+<coordinates>
+-5.6631,43.5393,5
+-5.6631,43.5393,5
+-5.6642,43.5403,5
+-5.6625,43.5399,6
+-5.6648,43.5410,6
+-5.6660,43.5409,6
+</coordinates>
+<altitudeMode>relativeToGround</altitudeMode>
+</LineString>
+<Style id='lineaRoja'>
+<LineStyle>
+<color>#ff0000ff</color>
+<width>5</width>
+</LineStyle>
+</Style>
+</Placemark>
+</Document>
+</kml>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+<Placemark>
+<name>Senda del Cervigón</name>
+<LineString>
+<extrude>1</extrude>
+<tessellate>1</tessellate>
+<coordinates>
+-5.6457,43.5439,7
+-5.6457,43.5439,7
+-5.6458,43.5440,18
+-5.6454,43.5441,14
+-5.6194,43.5567,41
+-5.6186,43.5540,92
+</coordinates>
+<altitudeMode>relativeToGround</altitudeMode>
+</LineString>
+<Style id='lineaRoja'>
+<LineStyle>
+<color>#ff0000ff</color>
+<width>5</width>
+</LineStyle>
+</Style>
+</Placemark>
+</Document>
+</kml>

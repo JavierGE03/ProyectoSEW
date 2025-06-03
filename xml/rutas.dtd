@@ -1,0 +1,33 @@
+<!ELEMENT rutas (ruta+)>
+<!ELEMENT ruta (nombre, tipo, transporte, horario, agencia, descripcion, publico_objetivo, punto_inicio, referencias, valoracion, hitos, planimetria, altimetria)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT tipo (#PCDATA)>
+<!ELEMENT transporte (#PCDATA)>
+<!ELEMENT horario (fecha_inicio?, hora_inicio?, duracion)>
+<!ELEMENT fecha_inicio (#PCDATA)>
+<!ATTLIST fecha_inicio opcional (true|false) "false">
+<!ELEMENT hora_inicio (#PCDATA)>
+<!ATTLIST hora_inicio opcional (true|false) "false">
+<!ELEMENT duracion (#PCDATA)>
+<!ELEMENT agencia (#PCDATA)>
+<!ELEMENT descripcion (#PCDATA)>
+<!ELEMENT publico_objetivo (#PCDATA)>
+<!ELEMENT punto_inicio (lugar, direccion, coordenadas)>
+<!ELEMENT lugar (#PCDATA)>
+<!ELEMENT direccion (#PCDATA)>
+<!ELEMENT referencias (referencia+)>
+<!ELEMENT referencia (#PCDATA)>
+<!ELEMENT valoracion (#PCDATA)>
+<!ELEMENT hitos (hito+)>
+<!ELEMENT hito (nombre, descripcion, coordenadas, distancia_anterior, fotos)>
+<!ELEMENT coordenadas (longitud, latitud, altitud)>
+<!ELEMENT longitud (#PCDATA)>
+<!ELEMENT latitud (#PCDATA)>
+<!ELEMENT altitud (#PCDATA)>
+<!ATTLIST altitud unidades (m|km) "m">
+<!ELEMENT distancia_anterior (#PCDATA)>
+<!ATTLIST distancia_anterior unidades (m|km) "m">
+<!ELEMENT fotos (foto+)>
+<!ELEMENT foto (#PCDATA)>
+<!ELEMENT planimetria (#PCDATA)>
+<!ELEMENT altimetria (#PCDATA)>

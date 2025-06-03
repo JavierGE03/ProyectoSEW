@@ -1,0 +1,442 @@
+/* Estilos generales */
+/* 0,0,0,1 */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilos de navegación */
+/* 0,0,0,1 */
+nav {
+    background-color: #134b61;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* 0,0,0,1 */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* 0,0,0,2 */
+nav ul li {
+    margin: 0;
+    padding: 0;
+}
+
+/* 0,0,0,2 */
+nav ul a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 1em 1.5em;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+/* 0,0,0,2 */
+nav ul a:hover {
+    background-color: #2980b9;
+}
+
+/* 0,0,0,1 */
+.active {
+    background-color: #2980b9;
+    font-weight: bold;
+}
+
+/* Estilos del contenido principal */
+/* 0,0,0,1 */
+main {
+    flex: 1;
+    padding: 2em;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+}
+
+/* 0,0,0,1 */
+h1 {
+    color: #134b61;
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 1em;
+}
+
+/* Estilos de secciones */
+/* 0,0,0,2 */
+main section {
+    background-color: white;
+    margin: 1em 0;
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* 0,0,0,2 */
+main h2 {
+    color: #1a5f7a;
+    border-bottom: 2px solid #1a5f7a;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+}
+
+/* Estilos de listas */
+/* 0,0,0,2 */
+main ul, main ol {
+    padding-left: 2em;
+}
+
+/* 0,0,0,2 */
+main li {
+    margin-bottom: 0.5em;
+    line-height: 1.6;
+}
+
+/* Estilos de tabla */
+/* 0,0,0,1 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
+    background-color: white;
+}
+
+/* 0,0,0,2 */
+th, td {
+    padding: 1em;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+/* 0,0,0,1 */
+th {
+    background-color: #1a5f7a;
+    color: white;
+}
+
+/* 0,0,0,2 */
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Estilos multimedia */
+/* 0,0,0,2 */
+img, video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1em 0;
+    display: block;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Estilos del footer */
+/* 0,0,0,1 */
+footer {
+    background-color: #134b61;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    margin-top: 2em;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+}
+
+main section article {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Estilos específicos para el juego */
+main > section > section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2em;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Estilos para la pregunta del juego */
+main > section > section > p {
+    font-size: 1.5em;
+    text-align: center;
+    color: #134b61;
+    margin: 1.5em 0;
+    line-height: 1.4;
+    padding: 0 1em;
+}
+
+main > section > section > h3 {
+    font-size: 1.2em;
+    text-align: center;
+    color: #666;
+    margin-bottom: 2em;
+}
+
+main > section > section fieldset {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5em;
+    margin: 1em 0;
+}
+
+main > section > section legend {
+    padding: 0 1em;
+    color: #134b61;
+    font-weight: bold;
+}
+
+main > section > section label {
+    display: block;
+    padding: 1em;
+    margin: 0.5em 0;
+    background: #f5f5f5;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+main > section > section label:hover {
+    background: #e5e5e5;
+}
+
+main > section > section input[type="radio"] {
+    margin-right: 1em;
+}
+
+main > section > section button {
+    display: block;
+    margin: 2em auto;
+    padding: 1em 3em;
+    background: #134b61;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.1em;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(19, 75, 97, 0.2);
+}
+
+main > section > section button:hover {
+    background: #1a6380;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(19, 75, 97, 0.3);
+}
+/* Estilos para el mensaje de error y navegación del juego */
+main > section > section h4 {
+    color: #d32f2f;
+    text-align: center;
+    margin: 1em 0;
+    font-size: 1.1em;
+    min-height: 1.5em;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+main > section > section nav {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    background: white;
+}
+
+main > section > section nav button {
+    background: #134b61;
+    padding: 1em 2em;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(19, 75, 97, 0.2);
+}
+
+main > section > section nav button:hover {
+    background: #1a6380;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(19, 75, 97, 0.3);
+}
+
+/* Estilos para la pantalla de resultados */
+main > section > section > section {
+    text-align: center;
+    padding: 2em;
+}
+
+main > section > section > section h3 {
+    font-size: 2em;
+    color: #134b61;
+    margin-bottom: 1em;
+}
+
+main > section > section > section p {
+    font-size: 1.2em;
+    color: #666;
+    margin: 0.5em 0;
+}
+
+main > section > section > section h2 {
+    font-size: 4em;
+    color: #134b61;
+    margin: 0.5em 0;
+    animation: aparecer 0.5s ease-out;
+}
+
+@keyframes aparecer {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Estilos específicos para botones del carrusel */
+main section article button {
+    position: absolute;
+    width: 3em;
+    height: 3em;
+    padding: 0.5em;
+    border: 2px solid #134b61;
+    border-radius: 50%;
+    z-index: 10;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #134b61;
+    font-size: 1.2em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(19, 75, 97, 0.3);
+    backdrop-filter: blur(5px);
+}
+
+main section article button:hover {
+    background-color: #134b61;
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(19, 75, 97, 0.5);
+}
+
+/* Posicionamiento de los botones del carrusel */
+main section article button:first-of-type {
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+main section article button:last-of-type {
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+/* Estilos para la sección de noticias */
+main > section:nth-child(3) article {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    padding: 2em;
+}
+
+main > section:nth-child(3) ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2em;
+    width: 100%;
+}
+
+main > section:nth-child(3) article li {
+    background: white;
+    border-radius: 0.5em;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+main > section:nth-child(3) article li:hover {
+    transform: translateY(-5px);
+}
+
+main > section:nth-child(3) article h3 {
+    margin: 0;
+    padding: 1em;
+    color: #134b61;
+    font-size: 1.2em;
+}
+
+main > section:nth-child(3) article img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+main > section:nth-child(3) article time {
+    display: block;
+    padding: 0 1em;
+    color: #666;
+    font-size: 0.9em;
+}
+
+main > section:nth-child(3) article p {
+    padding: 1em;
+    margin: 0;
+    line-height: 1.6;
+}
+
+main > section:nth-child(3) article a {
+    display: inline-block;
+    margin: 1em;
+    padding: 0.5em 1em;
+    background: #134b61;
+    color: white;
+    text-decoration: none;
+    border-radius: 0.3em;
+    transition: background-color 0.3s ease;
+}
+
+main > section:nth-child(3) article a:hover {
+    background: #1a6380;
+}
+
+/* Ajuste responsivo mejorado */
+@media (max-width: 768px) {
+    main section article button {
+        width: 2.5em;
+        height: 2.5em;
+        font-size: 1em;
+    }
+    main {
+        flex-direction: column;
+    }
+}
+

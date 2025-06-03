@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego - Gijón</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="estilo/estilo.css">
+    <link rel="stylesheet" type="text/css" href="estilo/layout.css">
+    <script src="js/Juego.js"></script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Página principal</a></li>
+            <li><a href="gastronomia.html">Gastronomía</a></li>
+            <li><a href="rutas.html">Rutas</a></li>
+            <li><a href="meteorologia.html">Meteorología</a></li>
+            <li><a href="juego.html" class="active">Juego</a></li>
+            <li><a href="reservas.php">Reservas</a></li>
+            <li><a href="ayuda.html">Ayuda</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h1>¿Cuánto sabes sobre Gijón?</h1>
+        <section>
+            <h2>Test de conocimiento</h2>
+            <section></section>
+        </section>
+    </main>
+   <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const juego = new Juego();
+            juego.iniciar();
+        });
+    </script>
+</body>
+</html>

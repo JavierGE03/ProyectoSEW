@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meteorología - Gijón</title>
+    <link rel="stylesheet" type="text/css" href="estilo/estilo.css">
+    <link rel="stylesheet" type="text/css" href="estilo/layout.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/Meteorologia.js"></script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Página principal</a></li>
+            <li><a href="gastronomia.html">Gastronomía</a></li>
+            <li><a href="rutas.html">Rutas</a></li>
+            <li><a href="meteorologia.html" class="active">Meteorología</a></li>
+            <li><a href="juego.html">Juego</a></li>
+            <li><a href="reservas.php">Reservas</a></li>
+            <li><a href="ayuda.html">Ayuda</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h1>Meteorología en Gijón</h1>
+        <section>
+            <h2>Tiempo Actual</h2>
+            <article>
+                <!-- El tiempo actual se insertará aquí mediante JavaScript -->
+            </article>
+        </section>
+        <section>
+            <h2>Previsión para los próximos 7 días</h2>
+            <article>
+                <!-- La previsión se insertará aquí mediante JavaScript -->
+            </article>
+        </section>
+    </main>
+    <script>
+        // Inicializar componentes cuando el DOM esté listo
+        $(document).ready(() => {
+            new Meteorologia('body > main > section:nth-child(2) > article', 'body > main > section:nth-child(3) > article');
+        });
+    </script>
+</body>
+</html>
