@@ -305,6 +305,79 @@ main > section > section > section h2 {
     animation: aparecer 0.5s ease-out;
 }
 
+/* Estilos exclusivos para la sección de rutas usando main > article > article */
+
+main > article > article {
+    display: block;
+    position: static;
+    background: #fff;
+    border-radius: 10px;
+    margin-bottom: 2em;
+    padding: 2em 1.5em;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    border-bottom: 2px solid #1976d2;
+}
+
+main > article > article > button {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 1em 0 0 0;
+    border-radius: 6px;
+    box-shadow: none;
+    background: #1976d2;
+    color: #fff;
+    font-size: 1em;
+    font-weight: bold;
+    padding: 0.5em 1.5em;
+    border: none;
+    transition: background 0.2s;
+    display: inline-block;
+    left: auto;
+    right: auto;
+    top: auto;
+    transform: none;
+}
+
+main > article > article > button:hover {
+    background: #1565c0;
+    color: #fff;
+    transform: none;
+    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.15);
+}
+
+main > article > article > h2 {
+    color: #1976d2;
+    margin-bottom: 0.5em;
+    font-size: 1.3em;
+    border: none;
+    padding: 0;
+}
+
+main > article > article > p {
+    display: block;
+    margin: 0 0 1em 0;
+    color: #333;
+}
+
+main > article figure > div {
+    width: 100%;
+    max-width: 70em; 
+    margin: 2em auto;
+    background: #eaf6fa;
+    border-radius: 0.5em;
+    box-shadow: 0 0.125em 0.5em rgba(19, 75, 97, 0.15);
+    overflow: auto;
+    padding: 0;
+}
+
+main > article figure > div > svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    min-width: 37.5em;
+}
+
 @keyframes aparecer {
     from {
         transform: scale(0);
