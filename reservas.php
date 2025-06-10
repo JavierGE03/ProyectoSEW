@@ -6,6 +6,7 @@
     <title>Título - Gijón</title>
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css">
     <link rel="stylesheet" type="text/css" href="estilo/layout.css">
+    <link rel="icon" type="image/png" href="multimedia/icono.png">
 </head>
 <body>
     <nav>

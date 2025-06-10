@@ -360,15 +360,24 @@ main > article > article > p {
     color: #333;
 }
 
+/* Para los contenedores de mapa y altimetría */
 main > article figure > div {
     width: 100%;
-    max-width: 70em; 
+    height: 25em; /* o el alto que desees */
+    max-width: 70em;
     margin: 2em auto;
     background: #eaf6fa;
     border-radius: 0.5em;
     box-shadow: 0 0.125em 0.5em rgba(19, 75, 97, 0.15);
     overflow: auto;
     padding: 0;
+}
+
+/* Para las imágenes de los hitos */
+main > article > article section img {
+    max-width: 18.75em; /* 300px */
+    margin: 1em 0;
+    display: block;
 }
 
 main > article figure > div > svg {

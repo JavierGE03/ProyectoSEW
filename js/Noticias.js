@@ -16,47 +16,16 @@ class Noticias {
 
     async obtenerNoticias() {
         try {
-            const apiKey = 'ed548af0-b823-4656-8754-a1616bcaa0e0';
-            const url = 'http://eventregistry.org/api/v1/article/getArticles';
-            
-            const data = {
-                "query": {
-                    "$query": {
-                        "$and": [
-                            {
-                                "locationUri": "http://en.wikipedia.org/wiki/Gijón"
-                            },
-                            {
-                                "lang": "spa"
-                            }
-                        ]
-                    },
-                    "$filter": {
-                        "forceMaxDataTimeWindow": "31"
-                    }
-                },
-                "resultType": "articles",
-                "articlesSortBy": "date",
-                "apiKey": apiKey
-            };
+            const url = 'https://newsdata.io/api/1/latest?apikey=pub_2ed9958de11246df8df9859df0544622&q=Gijon&language=es';
 
-            console.log('Intentando obtener noticias...');
-            
             const respuesta = await $.ajax({
                 url: url,
-                type: "POST",
-                data: JSON.stringify(data),
-                contentType: "application/json"
+                type: "GET",
+                dataType: "json"
             });
 
-            console.log('Datos recibidos:', respuesta);
-            
-            if (respuesta.error) {
-                throw new Error(`Error de API: ${respuesta.error}`);
-            }
-            
-            // Adaptado a la estructura específica del JSON
-            return respuesta.articles?.results?.slice(0, 5) || [];
+            // Devuelve los primeros 5 resultados
+            return respuesta.results?.slice(0, 5) || [];
         } catch (error) {
             console.error('Error detallado:', error);
             throw error;
@@ -70,17 +39,17 @@ class Noticias {
             const articulo = $('<article>');
             const titulo = $('<h3>').text(noticia.title);
             const fecha = $('<time>')
-                .attr('datetime', noticia.dateTime)
-                .text(new Date(noticia.dateTime).toLocaleDateString());
-            const descripcion = $('<p>').text(noticia.body?.split('\n')[0] || ''); // Primera línea del body
+                .attr('datetime', noticia.pubDate)
+                .text(new Date(noticia.pubDate).toLocaleDateString());
+            const descripcion = $('<p>').text(noticia.description || '');
             const enlace = $('<a>')
-                .attr('href', noticia.url)
+                .attr('href', noticia.link)
                 .attr('target', '_blank')
                 .text('Leer más');
 
-            if (noticia.image) {
+            if (noticia.image_url) {
                 const imagen = $('<img>')
-                    .attr('src', noticia.image)
+                    .attr('src', noticia.image_url)
                     .attr('alt', noticia.title);
                 articulo.append(imagen);
             }

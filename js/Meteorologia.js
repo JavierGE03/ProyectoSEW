@@ -1,9 +1,5 @@
 class Meteorologia {
     constructor(selectorActual, selectorPrevision) {
-        this.apiKey = 'c59ed51647296b593ab3b397488fb503';
-        this.ciudad = 'Gijon';
-        this.lat = 43.5357;
-        this.lon = -5.6615;
         this.contenedorActual = $(selectorActual);
         this.contenedorPrevision = $(selectorPrevision);
         this.inicializar();
@@ -11,100 +7,110 @@ class Meteorologia {
 
     async inicializar() {
         try {
-            await Promise.all([
-                this.mostrarTiempoActual(),
-                this.mostrarPrevisión()
-            ]);
+            await this.mostrarPrevisionOpenMeteo();
         } catch (error) {
             console.error('Error al cargar datos meteorológicos:', error);
         }
     }
 
-    async mostrarTiempoActual() {
+    async mostrarPrevisionOpenMeteo() {
         try {
-            const url = `https://api.openweathermap.org/data/2.5/weather?lat=${this.lat}&lon=${this.lon}&units=metric&lang=es&appid=${this.apiKey}`;
+            const url = 'https://api.open-meteo.com/v1/forecast?latitude=43.53573&longitude=-5.66152&hourly=temperature_2m';
             const respuesta = await $.ajax({
                 url: url,
                 method: 'GET'
             });
 
-            const html = `
-                <section>
-                    <h3>${respuesta.name}</h3>
-                    <img src="https://openweathermap.org/img/wn/${respuesta.weather[0].icon}@2x.png" 
-                         alt="${respuesta.weather[0].description}">
-                    <p>${Math.round(respuesta.main.temp)}°C</p>
-                    <p>${respuesta.weather[0].description}</p>
-                    <ul>
-                        <li>Humedad: ${respuesta.main.humidity}%</li>
-                        <li>Viento: ${Math.round(respuesta.wind.speed * 3.6)} km/h</li>
-                        <li>Presión: ${respuesta.main.pressure} hPa</li>
-                    </ul>
-                </section>
+           // Buscar la hora más cercana a la actual
+            const ahoraSistema = new Date();
+            let indiceCercano = 0;
+            let diferenciaMin = Infinity;
+            respuesta.hourly.time.forEach((t, i) => {
+                const diff = Math.abs(new Date(t) - ahoraSistema);
+                if (diff < diferenciaMin) {
+                    diferenciaMin = diff;
+                    indiceCercano = i;
+                }
+            });
+            const horaActual = respuesta.hourly.time[indiceCercano];
+            const tempActual = respuesta.hourly.temperature_2m[indiceCercano];
+            const htmlActual = `
+                <table>
+                    <caption>Temperatura actual</caption>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Fecha y hora</th>
+                            <td>${new Date(horaActual).toLocaleString('es')}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Temperatura</th>
+                            <td>${tempActual}°C</td>
+                        </tr>
+                    </tbody>
+                </table>
             `;
+            this.contenedorActual.html(htmlActual);
+            
+            // Mostramos la previsión para las próximas 24 horas
+            const htmlPrevision = this.generarHTMLPrevisionesOpenMeteo(respuesta.hourly);
+            this.contenedorPrevision.html(htmlPrevision);
 
-            this.contenedorActual.html(html);
-        } catch (error) {
-            console.error('Error al obtener tiempo actual:', error);
-            this.contenedorActual.html('<p>Error al cargar el tiempo actual</p>');
-        }
-    }
-
-    async mostrarPrevisión() {
-        try {
-            const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${this.lat}&lon=${this.lon}&units=metric&lang=es&appid=${this.apiKey}`;
-            const respuesta = await $.ajax({
-                url: url,
-                method: 'GET'
-            });
-
-            const previsionesDiarias = this.procesarPrevisiones(respuesta.list);
-            const html = this.generarHTMLPrevisiones(previsionesDiarias);
-
-            this.contenedorPrevision.html(html);
         } catch (error) {
             console.error('Error al obtener previsión:', error);
+            this.contenedorActual.html('<p>Error al cargar la temperatura actual</p>');
             this.contenedorPrevision.html('<p>Error al cargar la previsión</p>');
         }
     }
 
-    procesarPrevisiones(previsiones) {
-        const previsionesPorDia = {};
-        
-        previsiones.forEach(prev => {
-            const fecha = new Date(prev.dt * 1000).toLocaleDateString();
-            if (!previsionesPorDia[fecha]) {
-                previsionesPorDia[fecha] = prev;
-            }
+   generarHTMLPrevisionesOpenMeteo(hourly) {
+    // Agrupar temperaturas por día
+    const dias = {};
+    hourly.time.forEach((hora, i) => {
+        const dia = hora.slice(0, 10); // "YYYY-MM-DD"
+        if (!dias[dia]) dias[dia] = [];
+        dias[dia].push(hourly.temperature_2m[i]);
+    });
+
+    // Calcular estadísticas de cada día y quedarnos con los 7 primeros días
+    const resumen = Object.entries(dias)
+        .slice(0, 7)
+        .map(([dia, temps]) => {
+            const media = temps.reduce((a, b) => a + b, 0) / temps.length;
+            const max = Math.max(...temps);
+            const min = Math.min(...temps);
+            return {
+                dia,
+                media: media.toFixed(1),
+                max: max.toFixed(1),
+                min: min.toFixed(1)
+            };
         });
 
-        return Object.values(previsionesPorDia).slice(0, 7);
-    }
-
-    generarHTMLPrevisiones(previsiones) {
-        return `
-            <ol>
-                ${previsiones.map(prev => `
-                    <li>
-                        <h3>${new Date(prev.dt * 1000).toLocaleDateString('es', {
-                            weekday: 'long',
-                            day: 'numeric',
-                            month: 'long'
-                        })}</h3>
-                        <figure>
-                            <img src="https://openweathermap.org/img/wn/${prev.weather[0].icon}@4x.png" 
-                                 alt="${prev.weather[0].description}">
-                            <figcaption>${Math.round(prev.main.temp)}°C</figcaption>
-                        </figure>
-                        <p>${prev.weather[0].description}</p>
-                        <ul>
-                            <li>Humedad: ${prev.main.humidity}%</li>
-                            <li>Viento: ${Math.round(prev.wind.speed * 3.6)} km/h</li>
-                            <li>Presión: ${prev.main.pressure} hPa</li>
-                        </ul>
-                    </li>
-                `).join('')}
-            </ol>
-        `;
-    }
+    // Generar HTML limpio (tabla sin estilos en línea)
+    return `
+        <table>
+            <thead>
+                <tr>
+                    <th>Día</th>
+                    <th>Media 🌡️</th>
+                    <th>Mínima ⬇️</th>
+                    <th>Máxima ⬆️</th>
+                </tr>
+            </thead>
+            <tbody>
+                ${resumen.map(d =>
+                    `<tr>
+                        <td>
+                            <strong>${new Date(d.dia).toLocaleDateString('es', { weekday: 'long' })}</strong><br>
+                            <small>${new Date(d.dia).toLocaleDateString('es', { day: '2-digit', month: '2-digit' })}</small>
+                        </td>
+                        <td>${d.media}°C</td>
+                        <td>${d.min}°C</td>
+                        <td>${d.max}°C</td>
+                    </tr>`
+                ).join('')}
+            </tbody>
+        </table>
+    `;
+}
 }

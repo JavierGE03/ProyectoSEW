@@ -37,16 +37,17 @@ class Rutas {
     }
 
     extraerHitos(rutaElement) {
-        return Array.from(rutaElement.getElementsByTagName('hito')).map(hito => ({
-            nombre: hito.getElementsByTagName('nombre')[0].textContent,
-            descripcion: hito.getElementsByTagName('descripcion')[0].textContent,
-            coordenadas: {
-                lon: parseFloat(hito.querySelector('coordenadas longitud').textContent),
-                lat: parseFloat(hito.querySelector('coordenadas latitud').textContent),
-                alt: parseFloat(hito.querySelector('coordenadas altitud').textContent)
-            }
-        }));
-    }
+    return Array.from(rutaElement.getElementsByTagName('hito')).map(hito => ({
+        nombre: hito.getElementsByTagName('nombre')[0].textContent,
+        descripcion: hito.getElementsByTagName('descripcion')[0].textContent,
+        coordenadas: {
+            lon: parseFloat(hito.querySelector('coordenadas longitud').textContent),
+            lat: parseFloat(hito.querySelector('coordenadas latitud').textContent),
+            alt: parseFloat(hito.querySelector('coordenadas altitud').textContent)
+        },
+        fotos: Array.from(hito.getElementsByTagName('foto')).map(f => f.textContent)
+    }));
+}
 
     mostrarListaRutas() {
         const rutasArticle = document.querySelector('main > article');
@@ -98,13 +99,10 @@ class Rutas {
 
         // Mapa
         const mapaContainer = document.createElement('div');
-        mapaContainer.style.height = '400px';
-        mapaContainer.style.width = '100%';
 
         // Altimetría
         const altimetriaContainer = document.createElement('div');
-        altimetriaContainer.style.height = '400px';
-        altimetriaContainer.style.width = '100%';
+        
 
         figure.appendChild(mapaContainer);
         figure.appendChild(altimetriaContainer);
@@ -115,6 +113,31 @@ class Rutas {
         article.appendChild(kmlInput);
         article.appendChild(svgInput);
         article.appendChild(figure);
+
+        // Mostrar información de los hitos
+        ruta.hitos.forEach(hito => {
+            const hitoSection = document.createElement('section');
+            const hitoNombre = document.createElement('h3');
+            hitoNombre.textContent = hito.nombre;
+            const hitoDesc = document.createElement('p');
+            hitoDesc.textContent = hito.descripcion;
+
+            hitoSection.appendChild(hitoNombre);
+            hitoSection.appendChild(hitoDesc);
+
+            // Mostrar fotos si existen
+            if (hito.fotos && Array.isArray(hito.fotos)) {
+                hito.fotos.forEach(foto => {
+                    const img = document.createElement('img');
+                    // Corrige la ruta si empieza por "/multimedia/"
+                    img.src = foto.startsWith('/multimedia/') ? foto.substring(1) : foto;
+                    img.alt = hito.nombre;
+                    hitoSection.appendChild(img);
+                });
+            }
+
+            article.appendChild(hitoSection);
+        });
 
         kmlInput.addEventListener('change', (e) => {
             this.cargarKML(e.target.files[0], mapaContainer, ruta);
