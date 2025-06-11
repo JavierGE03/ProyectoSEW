@@ -19,7 +19,7 @@ nav {
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    box-shadow: 0 0.125rem 0.3125rem rgba(0,0,0,0.2);
 }
 
 /* 0,0,0,1 */
@@ -64,7 +64,7 @@ nav ul a:hover {
 main {
     flex: 1;
     padding: 2em;
-    max-width: 1200px;
+    max-width: 75rem;
     margin: 0 auto;
     width: 100%;
     box-sizing: border-box;
@@ -87,14 +87,14 @@ main section {
     background-color: white;
     margin: 1em 0;
     padding: 2em;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 0.5rem;
+    box-shadow: 0 0.125rem 0.3125rem rgba(0,0,0,0.1);
 }
 
 /* 0,0,0,2 */
 main h2 {
     color: #1a5f7a;
-    border-bottom: 2px solid #1a5f7a;
+    border-bottom: 0.125rem solid #1a5f7a;
     padding-bottom: 0.5em;
     margin-bottom: 1em;
 }
@@ -123,7 +123,7 @@ table {
 /* 0,0,0,2 */
 th, td {
     padding: 1em;
-    border: 1px solid #ddd;
+    border: 0.0625rem solid #ddd;
     text-align: left;
 }
 
@@ -138,15 +138,29 @@ tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 
+body > main > section:nth-child(3) ol {
+    display: block;
+    list-style-type: decimal-leading-zero;
+    border-radius: 0.5rem;
+    padding: 1.5em 2em;
+    margin: 1.5em 0;
+}
+
+body > main > section:nth-child(3) ol li {
+    margin-bottom: 1em;
+    padding-left: 0.5em;
+    line-height: 1.7;
+}
+
 /* Estilos multimedia */
 /* 0,0,0,2 */
 img, video {
     max-width: 100%;
     height: auto;
-    border-radius: 8px;
+    border-radius: 0.5rem;
     margin: 1em 0;
     display: block;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 0.125rem 0.3125rem rgba(0,0,0,0.1);
 }
 
 /* Estilos del footer */
@@ -157,7 +171,7 @@ footer {
     text-align: center;
     padding: 1em;
     margin-top: 2em;
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 -0.125rem 0.3125rem rgba(0,0,0,0.1);
 }
 
 main section article {
@@ -166,14 +180,15 @@ main section article {
     justify-content: center;
     align-items: center;
 }
+
 /* Estilos específicos para el juego */
 main > section > section {
-    max-width: 800px;
+    max-width: 50rem;
     margin: 0 auto;
     padding: 2em;
     background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 0.5rem;
+    box-shadow: 0 0.125rem 0.3125rem rgba(0,0,0,0.1);
 }
 
 /* Estilos para la pregunta del juego */
@@ -194,8 +209,8 @@ main > section > section > h3 {
 }
 
 main > section > section fieldset {
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    border: 0.0625rem solid #ddd;
+    border-radius: 0.5rem;
     padding: 1.5em;
     margin: 1em 0;
 }
@@ -211,7 +226,7 @@ main > section > section label {
     padding: 1em;
     margin: 0.5em 0;
     background: #f5f5f5;
-    border-radius: 8px;
+    border-radius: 0.5rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -231,19 +246,20 @@ main > section > section button {
     background: #134b61;
     color: white;
     border: none;
-    border-radius: 25px;
+    border-radius: 1.5625rem;
     cursor: pointer;
     transition: all 0.3s ease;
     font-size: 1.1em;
     font-weight: 500;
-    box-shadow: 0 2px 8px rgba(19, 75, 97, 0.2);
+    box-shadow: 0 0.125rem 0.5rem rgba(19, 75, 97, 0.2);
 }
 
 main > section > section button:hover {
     background: #1a6380;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(19, 75, 97, 0.3);
+    transform: translateY(-0.125rem);
+    box-shadow: 0 0.25rem 0.75rem rgba(19, 75, 97, 0.3);
 }
+
 /* Estilos para el mensaje de error y navegación del juego */
 main > section > section h4 {
     color: #d32f2f;
@@ -266,18 +282,18 @@ main > section > section nav button {
     background: #134b61;
     padding: 1em 2em;
     border: none;
-    border-radius: 25px;
+    border-radius: 1.5625rem;
     color: white;
     cursor: pointer;
     font-size: 1.1em;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(19, 75, 97, 0.2);
+    box-shadow: 0 0.125rem 0.5rem rgba(19, 75, 97, 0.2);
 }
 
 main > section > section nav button:hover {
     background: #1a6380;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(19, 75, 97, 0.3);
+    transform: translateY(-0.125rem);
+    box-shadow: 0 0.25rem 0.75rem rgba(19, 75, 97, 0.3);
 }
 
 /* Estilos para la pantalla de resultados */
@@ -311,11 +327,11 @@ main > article > article {
     display: block;
     position: static;
     background: #fff;
-    border-radius: 10px;
+    border-radius: 0.625rem;
     margin-bottom: 2em;
     padding: 2em 1.5em;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    border-bottom: 2px solid #1976d2;
+    box-shadow: 0 0.125rem 0.5rem rgba(0,0,0,0.06);
+    border-bottom: 0.125rem solid #1976d2;
 }
 
 main > article > article > button {
@@ -323,7 +339,7 @@ main > article > article > button {
     width: auto;
     height: auto;
     margin: 1em 0 0 0;
-    border-radius: 6px;
+    border-radius: 0.375rem;
     box-shadow: none;
     background: #1976d2;
     color: #fff;
@@ -343,7 +359,7 @@ main > article > article > button:hover {
     background: #1565c0;
     color: #fff;
     transform: none;
-    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.15);
+    box-shadow: 0 0.125rem 0.5rem rgba(25, 118, 210, 0.15);
 }
 
 main > article > article > h2 {
@@ -363,19 +379,19 @@ main > article > article > p {
 /* Para los contenedores de mapa y altimetría */
 main > article figure > div {
     width: 100%;
-    height: 25em; /* o el alto que desees */
-    max-width: 70em;
+    height: 25em;
+    max-width: 70rem;
     margin: 2em auto;
     background: #eaf6fa;
-    border-radius: 0.5em;
-    box-shadow: 0 0.125em 0.5em rgba(19, 75, 97, 0.15);
+    border-radius: 0.5rem;
+    box-shadow: 0 0.125rem 0.5rem rgba(19, 75, 97, 0.15);
     overflow: auto;
     padding: 0;
 }
 
 /* Para las imágenes de los hitos */
 main > article > article section img {
-    max-width: 18.75em; /* 300px */
+    max-width: 18.75rem;
     margin: 1em 0;
     display: block;
 }
@@ -384,7 +400,7 @@ main > article figure > div > svg {
     display: block;
     width: 100%;
     height: auto;
-    min-width: 37.5em;
+    min-width: 37.5rem;
 }
 
 @keyframes aparecer {
@@ -404,7 +420,7 @@ main section article button {
     width: 3em;
     height: 3em;
     padding: 0.5em;
-    border: 2px solid #134b61;
+    border: 0.125rem solid #134b61;
     border-radius: 50%;
     z-index: 10;
     cursor: pointer;
@@ -416,29 +432,30 @@ main section article button {
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(19, 75, 97, 0.3);
-    backdrop-filter: blur(5px);
+    box-shadow: 0 0.125rem 0.5rem rgba(19, 75, 97, 0.3);
+    backdrop-filter: blur(0.3125rem);
 }
 
 main section article button:hover {
     background-color: #134b61;
     color: white;
     transform: scale(1.1);
-    box-shadow: 0 4px 12px rgba(19, 75, 97, 0.5);
+    box-shadow: 0 0.25rem 0.75rem rgba(19, 75, 97, 0.5);
 }
 
 /* Posicionamiento de los botones del carrusel */
 main section article button:first-of-type {
-    left: 10px;
+    left: 0.625rem;
     top: 50%;
     transform: translateY(-50%);
 }
 
 main section article button:last-of-type {
-    right: 10px;
+    right: 0.625rem;
     top: 50%;
     transform: translateY(-50%);
 }
+
 /* Estilos para la sección de noticias */
 main > section:nth-child(3) article {
     display: flex;
@@ -452,21 +469,21 @@ main > section:nth-child(3) ol {
     padding: 0;
     margin: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
     gap: 2em;
     width: 100%;
 }
 
 main > section:nth-child(3) article li {
     background: white;
-    border-radius: 0.5em;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 0.5rem;
+    box-shadow: 0 0.125rem 0.3125rem rgba(0,0,0,0.1);
     overflow: hidden;
     transition: transform 0.3s ease;
 }
 
 main > section:nth-child(3) article li:hover {
-    transform: translateY(-5px);
+    transform: translateY(-0.3125rem);
 }
 
 main > section:nth-child(3) article h3 {
@@ -478,7 +495,7 @@ main > section:nth-child(3) article h3 {
 
 main > section:nth-child(3) article img {
     width: 100%;
-    height: 200px;
+    height: 12.5rem;
     object-fit: cover;
 }
 
@@ -502,7 +519,7 @@ main > section:nth-child(3) article a {
     background: #134b61;
     color: white;
     text-decoration: none;
-    border-radius: 0.3em;
+    border-radius: 0.3rem;
     transition: background-color 0.3s ease;
 }
 
@@ -510,8 +527,149 @@ main > section:nth-child(3) article a:hover {
     background: #1a6380;
 }
 
+/* Estilos para formularios de reservas y login */
+main form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    background: #f7fbfc;
+    padding: 2em;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.125rem 0.5rem rgba(19, 75, 97, 0.08);
+    max-width: 31.25rem;
+    margin: 1.5em auto;
+}
+
+main form label {
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    color: #134b61;
+    gap: 0.5em;
+}
+
+main form input[type="text"],
+main form input[type="email"],
+main form input[type="password"],
+main form input[type="number"],
+main form select {
+    padding: 0.7em 1em;
+    border: 0.0625rem solid #b3c6d1;
+    border-radius: 0.375rem;
+    font-size: 1em;
+    background: #fff;
+    transition: border-color 0.2s;
+}
+
+main form input:focus,
+main form select:focus {
+    border-color: #1976d2;
+    outline: none;
+}
+
+main form button {
+    background: #1976d2;
+    color: #fff;
+    border: none;
+    border-radius: 0.375rem;
+    padding: 0.8em 2em;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 1em;
+    transition: background 0.2s;
+    box-shadow: 0 0.125rem 0.5rem rgba(25, 118, 210, 0.08);
+}
+
+main form button:hover {
+    background: #134b61;
+}
+
+/* Estilos para la tabla de reservas */
+main table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2em 0;
+    background: #fff;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 0.125rem 0.5rem rgba(19, 75, 97, 0.08);
+}
+
+main th, main td {
+    padding: 1em;
+    border: 0.0625rem solid #e0e7ef;
+    text-align: left;
+}
+
+main th {
+    background: #1976d2;
+    color: #fff;
+    font-weight: bold;
+}
+
+main tr:nth-child(even) {
+    background: #f5faff;
+}
+
+main tr:hover {
+    background: #eaf6fa;
+}
+
+main table button {
+    background: #d32f2f;
+    color: #fff;
+    border: none;
+    border-radius: 0.375rem;
+    padding: 0.5em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+main table button:hover {
+    background: #b71c1c;
+}
+
+/* Mensaje de estado */
+main > p {
+    text-align: center;
+    font-size: 1.1em;
+    color: #1976d2;
+    margin: 1em 0 2em 0;
+}
+
+/* Encabezados de sección */
+main h2 {
+    margin-top: 2em;
+    font-size: 1.5em;
+    color: #134b61;
+    border-bottom: 0.0625rem solid #b3c6d1;
+    padding-bottom: 0.3em;
+}
+
+/* Botón de cerrar sesión */
+main > form > button[type="submit"][name="logout"] {
+    background: #e57373;
+    color: #fff;
+    border: none;
+    border-radius: 0.375rem;
+    padding: 0.7em 1.5em;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 1em auto 2em auto;
+    display: block;
+    transition: background 0.2s;
+}
+
+main > form > button[type="submit"][name="logout"]:hover {
+    background: #b71c1c;
+}
+
 /* Ajuste responsivo mejorado */
-@media (max-width: 768px) {
+@media (max-width: 48rem) {
     main section article button {
         width: 2.5em;
         height: 2.5em;
@@ -521,4 +679,3 @@ main > section:nth-child(3) article a:hover {
         flex-direction: column;
     }
 }
-
