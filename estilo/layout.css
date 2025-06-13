@@ -1,5 +1,5 @@
 /* Layout principal usando CSS Grid */
-/* 0,0,0,1 */
+/* 0,0,1 */
 body {
     display: grid;
     grid-template-areas: 
@@ -9,13 +9,13 @@ body {
     min-height: 100vh;
 }
 
-/* 0,0,0,1 */
+/* 0,0,1 */
 header {
     grid-area: header;
 }
 
 /* Navegación usando Flexbox */
-/* 0,0,0,1 */
+/* 0,0,2 */
 nav ul {
     display: flex;
     justify-content: space-around;
@@ -23,7 +23,7 @@ nav ul {
 }
 
 /* Layout de secciones usando Grid */
-/* 0,0,0,1 */
+/* 0,0,1 */
 main {
     grid-area: main;
     display: grid;
@@ -33,13 +33,13 @@ main {
 
 /* Media queries para diseño responsive */
 @media (max-width: 768px) {
-    /* 0,0,0,1 */
+    /* 0,0,2 */
     nav ul {
         flex-direction: column;
         align-items: center;
     }
     
-    /* 0,0,0,2 */
+    /* 0,0,2 */
     main section {
         grid-column: 1 / -1;
     }
