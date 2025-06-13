@@ -209,6 +209,17 @@ main > section > section > h3 {
     color: #666;
     margin-bottom: 2em;
 }
+/* Imagen de ayuda visual en el juego */
+/* 0,0,5 */
+main > section > section figure img {
+    width: 100%;
+    max-width: 25em;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
 /* 0,0,4 */
 main > section > section fieldset {
     border: 0.0625rem solid #ddd;

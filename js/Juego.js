@@ -2,119 +2,127 @@ class Juego {
     constructor() {
         this.preguntas = [
             {
-                pregunta: "¿Qué famosa escultura se encuentra en el paseo marítimo de Gijón?",
+                pregunta: "¿Cómo se llama la escultura situada al final del paseo marítimo de Gijón, conocida como 'La Lloca'?",
                 opciones: [
-                    "La Madre del Emigrante ('La Lloca')",
-                    "El Pensador",
-                    "La Sirena",
-                    "El Pescador",
-                    "El Marinero"
+                    "La Madre del Emigrante",
+                    "Solidaridad",
+                    "Sombras de Luz",
+                    "Elogio del Horizonte",
+                    "Galileo Galilei XV"
                 ],
-                correcta: 0
+                correcta: 0,
+                imagen: "multimedia/Lloca.jpg"
             },
             {
-                pregunta: "¿Qué edificio emblemático alberga el Museo de Gijón?",
+                pregunta: "¿Qué edificio aparece en la imagen y es conocido como 'La Iglesiona'?",
                 opciones: [
-                    "Palacio de los Deportes",
-                    "Palacio de Revillagigedo",
-                    "Casa Natal de Jovellanos",
-                    "Teatro Jovellanos",
-                    "Universidad Laboral"
+                    "Iglesia de San Pedro",
+                    "Basílica del Sagrado Corazón",
+                    "Casa Gerardo",
+                    "Café Dindurra",
+                    "Sidrería Puente Romano"
                 ],
-                correcta: 1
+                correcta: 1,
+                imagen: "multimedia/basilica.jpg"
             },
             {
-                pregunta: "¿Cómo se llama la playa principal de Gijón?",
+                pregunta: "¿Qué ruta turística de la aplicación recorre la costa y termina en el Mirador de la Providencia?",
                 opciones: [
-                    "Playa del Arbeyal",
-                    "Playa de Poniente",
-                    "Playa de San Lorenzo",
-                    "Playa del Rinconín",
-                    "Playa de los Mayanes"
+                    "Ruta Gastronómica por Gijón Centro",
+                    "Ruta Mixta: Tapas y Monumentos",
+                    "Senda del Cervigón",
+                    "Ruta de los Museos",
+                    "Ruta de la Sidra"
                 ],
-                correcta: 2
+                correcta: 2,
+                imagen: "multimedia/Providencia.jpg"
             },
             {
-                pregunta: "¿Qué símbolo de Gijón es conocido como 'Elogio del Horizonte'?",
+                pregunta: "¿Cuál es el nombre del restaurante de alta cocina asturiana con estrella Michelin que aparece en la aplicación?",
                 opciones: [
-                    "Un faro",
-                    "Una estatua de bronce",
-                    "Una fuente",
-                    "Una escultura de hormigón de Chillida",
-                    "Un mirador"
+                    "Casa Gerardo",
+                    "La Salgar",
+                    "Tierra Astur",
+                    "El Candil",
+                    "Coalla"
                 ],
-                correcta: 3
+                correcta: 1,
+                imagen: "multimedia/Coalla.jpg"
             },
             {
-                pregunta: "¿Qué barrio histórico de Gijón es conocido como el barrio de los pescadores?",
+                pregunta: "¿Qué escultura de la imagen representa cadenas entrelazadas y simboliza la unión y la libertad?",
                 opciones: [
-                    "Cimadevilla",
-                    "La Arena",
-                    "El Centro",
-                    "La Calzada",
-                    "Somió"
+                    "Sombras de Luz",
+                    "Solidaridad",
+                    "Galileo Galilei XV",
+                    "La Madre del Emigrante",
+                    "Mirador de la Providencia"
                 ],
-                correcta: 0
+                correcta: 1,
+                imagen: "multimedia/escultura-solidaridad.jpg"
             },
             {
-                pregunta: "¿Qué tipo de bebida es típica en las sidrerías de Gijón?",
+                pregunta: "¿Qué escultura moderna situada al inicio de la Senda del Cervigón aparece en la imagen?",
                 opciones: [
-                    "Vino blanco",
-                    "Sidra natural",
-                    "Cerveza artesanal",
-                    "Vermut",
-                    "Sangría"
+                    "Sombras de Luz",
+                    "Solidaridad",
+                    "La Madre del Emigrante",
+                    "Elogio del Horizonte",
+                    "Galileo Galilei XV"
                 ],
-                correcta: 1
+                correcta: 0,
+                imagen: "multimedia/Sombras.jpg"
             },
             {
-                pregunta: "¿Qué construcción romana se puede visitar en el barrio de Campo Valdés?",
+                pregunta: "¿Cómo se llama el café histórico de Gijón que aparece en la ruta gastronómica?",
                 opciones: [
-                    "Un acueducto",
-                    "Un anfiteatro",
-                    "Unas termas",
-                    "Un templo",
-                    "Una muralla"
+                    "Café Dindurra",
+                    "Café Gijón",
+                    "Café Central",
+                    "Café Moderno",
+                    "Café Asturias"
                 ],
-                correcta: 2
+                correcta: 0,
+                imagen: "multimedia/Dindurra.jpg"
             },
             {
-                pregunta: "¿Qué fiesta popular se celebra en Gijón durante el mes de agosto?",
+                pregunta: "¿Qué plaza emblemática de Gijón aparece en la imagen?",
                 opciones: [
-                    "Carnaval",
-                    "Feria de Muestras",
-                    "San Valentín",
-                    "Semana Grande",
-                    "Navidad"
+                    "Plaza Mayor",
+                    "Plaza del Ayuntamiento",
+                    "Plaza de Europa",
+                    "Plaza del Carmen",
+                    "Plaza San Miguel"
                 ],
-                correcta: 3
+                correcta: 0,
+                imagen: "multimedia/Plaza_Mayor.jpg"
             },
             {
-                pregunta: "¿Qué deporte tradicional asturiano se practica en Gijón?",
+                pregunta: "¿Qué restaurante de cocina fusión es el punto de inicio de la Ruta Gastronómica por Gijón Centro?",
                 opciones: [
-                    "Bolos asturianos",
-                    "Pelota vasca",
-                    "Lucha leonesa",
-                    "Balonmano",
-                    "Rugby"
+                    "Umami Gijón",
+                    "Zascandil",
+                    "La Salgar",
+                    "Casa Gerardo",
+                    "Tierra Astur"
                 ],
-                correcta: 0
+                correcta: 0,
+                imagen: "multimedia/umami.jpg"
             },
             {
-                pregunta: "¿Qué museo científico interactivo se encuentra en Gijón?",
+                pregunta: "¿Qué tienda gourmet de productos asturianos aparece en la ruta gastronómica?",
                 opciones: [
-                    "Museo del Ferrocarril",
-                    "Laboral Centro de Arte",
-                    "Museo del Pueblo de Asturias",
-                    "Acuario",
-                    "Museo de la Sidra"
+                    "Coalla",
+                    "La Gijonesa",
+                    "Casa Trabanco",
+                    "Casa Victor",
+                    "Zascandil"
                 ],
-                correcta: 1
+                correcta: 1,
+                imagen: "multimedia/Gijonesa.jpg"
             }
         ];
         this.preguntaActual = 0;
-        this.respuestas = [];
-       this.preguntaActual = 0;
         this.respuestas = [];
     }
 
@@ -126,10 +134,11 @@ class Juego {
     mostrarPregunta() {
         if (this.preguntaActual < this.preguntas.length) {
             const pregunta = this.preguntas[this.preguntaActual];
-            
+
             this.contenedor.innerHTML = `
-                <h3>Pregunta ${this.preguntaActual + 1} de 10</h3>
+                <h3>Pregunta ${this.preguntaActual + 1} de ${this.preguntas.length}</h3>
                 <p>${pregunta.pregunta}</p>
+                ${pregunta.imagen ? `<figure><img src="${pregunta.imagen}" alt="Ayuda visual"></figure>` : ''}
                 <h4></h4>
                 <section>
                     <fieldset>
@@ -154,7 +163,7 @@ class Juego {
 
             const botones = this.contenedor.querySelectorAll('button');
             botones[botones.length - 1].addEventListener('click', () => this.siguientePregunta());
-            
+
             if (botones.length > 1) {
                 botones[0].addEventListener('click', () => this.anteriorPregunta());
             }
