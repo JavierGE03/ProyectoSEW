@@ -35,10 +35,11 @@ CREATE TABLE recursos_turisticos (
 
 -- Tabla reservas
 CREATE TABLE reservas (
-    id_reserva INT PRIMARY KEY,
+    id_reserva INT PRIMARY KEY AUTO_INCREMENT,
     id_usuario INT NOT NULL,
     id_recurso INT NOT NULL,
-    fecha DATETIME NOT NULL,
+    fecha_inicio DATETIME NOT NULL,
+    fecha_fin DATETIME NOT NULL,
     estado VARCHAR(20) NOT NULL,
     presupuesto DECIMAL(8,2) NOT NULL,
     FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario),
@@ -47,7 +48,7 @@ CREATE TABLE reservas (
 
 -- Tabla detalle_reserva
 CREATE TABLE detalle_reserva (
-    id_detalle INT PRIMARY KEY,
+    id_detalle INT PRIMARY KEY AUTO_INCREMENT,
     id_reserva INT NOT NULL,
     cantidad_personas INT NOT NULL,
     observaciones VARCHAR(255),

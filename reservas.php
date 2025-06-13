@@ -1,7 +1,7 @@
 <?php
-// filepath: c:\xampp\htdocs\ProyectoSEW\reservas.php
-ini_set('display_errors', 0);
-error_reporting(0);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 session_start();
 
 // --- Configuración y clases ---
@@ -68,16 +68,33 @@ class Recurso {
 class Reserva {
     private $db;
     public function __construct($db) { $this->db = $db; }
-    public function reservar($id_usuario, $id_recurso, $personas) {
-        $recurso = (new Recurso($this->db))->obtener($id_recurso);
-        if (!$recurso) return false;
-        $presupuesto = $recurso['precio'] * $personas;
-        $stmt = $this->db->prepare("INSERT INTO reservas (id_usuario, id_recurso, presupuesto, estado) VALUES (?, ?, ?, 'confirmada')");
-        $stmt->execute([$id_usuario, $id_recurso, $presupuesto]);
-        $id_reserva = $this->db->lastInsertId();
-        $stmt2 = $this->db->prepare("INSERT INTO detalle_reserva (id_reserva, cantidad_personas) VALUES (?, ?)");
-        $stmt2->execute([$id_reserva, $personas]);
-        return true;
+   public function reservar($id_usuario, $id_recurso, $personas, $fecha_inicio, $fecha_fin, $observaciones = '') {
+        try {
+            $recurso = (new Recurso($this->db))->obtener($id_recurso);
+            if (!$recurso) return false;
+            
+            $presupuesto = $recurso['precio'] * $personas;
+            
+            $this->db->beginTransaction();
+            
+            $stmt = $this->db->prepare("INSERT INTO reservas (id_usuario, id_recurso, fecha_inicio, fecha_fin, presupuesto, estado) 
+                VALUES (?, ?, ?, ?, ?, 'confirmada')");
+            $stmt->execute([$id_usuario, $id_recurso, $fecha_inicio, $fecha_fin, $presupuesto]);
+            
+            $id_reserva = $this->db->lastInsertId();
+            
+            $stmt2 = $this->db->prepare("INSERT INTO detalle_reserva (id_reserva, cantidad_personas, observaciones) 
+                VALUES (?, ?, ?)");
+            $stmt2->execute([$id_reserva, $personas, $observaciones]);
+            
+            $this->db->commit();
+            return true;
+            
+        } catch (Exception $e) {
+            $this->db->rollBack();
+            error_log("Error en reserva: " . $e->getMessage());
+            return false;
+        }
     }
     public function listarPorUsuario($id_usuario) {
         $sql = "SELECT r.id_reserva, rt.nombre, rt.descripcion, r.presupuesto, r.estado, d.cantidad_personas
@@ -128,7 +145,14 @@ if (isset($_POST['logout'])) {
 
 // Reserva
 if (isset($_POST['reservar']) && $usuario->actual()) {
-    if ($reserva->reservar($usuario->actual(), $_POST['id_recurso'], $_POST['personas'])) {
+    if ($reserva->reservar(
+        $usuario->actual(), 
+        $_POST['id_recurso'],
+        $_POST['personas'],
+        $_POST['fecha_inicio'],
+        $_POST['fecha_fin'],
+        $_POST['observaciones'] ?? ''
+    )) {
         $msg = "Reserva realizada correctamente.";
     } else {
         $msg = "Error al realizar la reserva.";
@@ -162,7 +186,7 @@ if (isset($_POST['anular']) && $usuario->actual()) {
             <li><a href="rutas.html">Rutas</a></li>
             <li><a href="meteorologia.html">Meteorología</a></li>
             <li><a href="juego.html">Juego</a></li>
-            <li><a href="reservas.php">Reservas</a></li>
+            <li><a href="reservas.php" class="active">Reservas</a></li>
             <li><a href="ayuda.html">Ayuda</a></li>
         </ul>
     </nav>
@@ -197,12 +221,27 @@ if (isset($_POST['anular']) && $usuario->actual()) {
                     <select name="id_recurso" required autocomplete="off">
                         <?php foreach ($recurso->listar() as $r): ?>
                         <option value="<?php echo $r['id_recurso']; ?>">
-                            <?php echo htmlspecialchars($r['nombre']); ?> (<?php echo htmlspecialchars($r['nombre_tipo']); ?>) - <?php echo $r['plazas']; ?> plazas - <?php echo $r['precio']; ?>€
+                            <?php echo htmlspecialchars($r['nombre']); ?> 
+                            (<?php echo htmlspecialchars($r['nombre_tipo']); ?>) - 
+                            <?php echo $r['plazas']; ?> plazas - 
+                            <?php echo $r['precio']; ?>€
                         </option>
                         <?php endforeach; ?>
                     </select>
                 </label>
-                <label>Personas: <input type="number" name="personas" min="1" max="20" required autocomplete="off"></label>
+                <label>Fecha de inicio:
+                    <input type="datetime-local" name="fecha_inicio" required>
+                </label>
+                <label>Fecha de fin:
+                    <input type="datetime-local" name="fecha_fin" required>
+                </label>
+                <label>Personas:
+                    <input type="number" name="personas" min="1" max="20" required>
+                </label>
+                <label>Observaciones:
+                    <textarea name="observaciones" rows="4" maxlength="255" 
+                        placeholder="Añada aquí cualquier comentario o requisito especial"></textarea>
+                </label>
                 <button type="submit" name="reservar">Reservar</button>
             </form>
         </section>
