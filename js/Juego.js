@@ -144,7 +144,6 @@ class Juego {
                 <h3>Pregunta ${this.preguntaActual + 1} de ${this.preguntas.length}</h3>
                 <p>${pregunta.pregunta}</p>
                 ${pregunta.imagen ? `<figure><img src="${pregunta.imagen}" alt="Ayuda visual"></figure>` : ''}
-                <h4>&nbsp;</h4>
                 <section>
                     <fieldset>
                         <legend>Selecciona una respuesta:</legend>
@@ -179,15 +178,23 @@ class Juego {
 
     siguientePregunta() {
         const seleccionada = this.contenedor.querySelector('input[name="respuesta"]:checked');
-        const mensajeError = this.contenedor.querySelector('h4');
-        
+        let mensajeError = this.contenedor.querySelector('h4');
+
         if (!seleccionada) {
-            mensajeError.textContent = '⚠️ Por favor, selecciona una respuesta antes de continuar';
-            mensajeError.style.opacity = '1';
+            if (!mensajeError) {
+                mensajeError = document.createElement('h4');
+                mensajeError.textContent = 'Por favor, selecciona una respuesta antes de continuar';
+                this.contenedor.insertBefore(mensajeError, this.contenedor.firstChild);
+            } else {
+                mensajeError.textContent = 'Por favor, selecciona una respuesta antes de continuar';
+            }
             return;
         }
 
-        mensajeError.textContent = '';
+        if (mensajeError) {
+            mensajeError.remove();
+        }
+
         this.respuestas[this.preguntaActual] = parseInt(seleccionada.value);
         this.preguntaActual++;
         this.mostrarPregunta();
