@@ -10,11 +10,33 @@ class Rutas {
             document.querySelector('main').appendChild(rutasArticle);
         }
         rutasArticle.innerHTML = '';
+        
+        // Crear una sección para el formulario de carga
+        const cargaSection = document.createElement('section');
+        cargaSection.setAttribute('aria-label', 'Carga de rutas');
+        
+        // Crear un formulario para mantener el control
+        const form = document.createElement('form');
+        form.onsubmit = (e) => e.preventDefault(); // Evitar envío de formulario
+        
+        // Crear el label
+        const label = document.createElement('label');
+        label.textContent = 'Selecciona un archivo XML de rutas: ';
+        label.setAttribute('for', 'rutasXmlInput');
+        label.style.marginRight = '1em';
+        
+        // Crear el input
         const input = document.createElement('input');
         input.type = 'file';
         input.accept = '.xml';
+        input.id = 'rutasXmlInput';
         input.addEventListener('change', (e) => this.cargarXML(e.target.files[0]));
-        rutasArticle.appendChild(input);
+        
+        // Añadir elementos al DOM
+        form.appendChild(label);
+        form.appendChild(input);
+        cargaSection.appendChild(form);
+        rutasArticle.appendChild(cargaSection);
     }
 
     async cargarXML(file) {
