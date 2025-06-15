@@ -144,7 +144,7 @@ class Juego {
                 <h3>Pregunta ${this.preguntaActual + 1} de ${this.preguntas.length}</h3>
                 <p>${pregunta.pregunta}</p>
                 ${pregunta.imagen ? `<figure><img src="${pregunta.imagen}" alt="Ayuda visual"></figure>` : ''}
-                <h4></h4>
+                <h4>&nbsp;</h4>
                 <section>
                     <fieldset>
                         <legend>Selecciona una respuesta:</legend>
