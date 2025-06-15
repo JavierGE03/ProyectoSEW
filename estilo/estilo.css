@@ -13,10 +13,10 @@ body {
 }
 
 /* Estilos de navegación */
-/* Advertencia CSS: El color de primer plano (color de texto) se hereda de body */
 /* 0,0,1 */
 nav {
-    background-color: #0B2E3D;
+    background-color: #134b61; 
+    color: #ffffff;    
     position: sticky;
     top: 0;
     z-index: 100;
@@ -53,14 +53,13 @@ nav ul a {
 /* 0,1,3 */
 /* Advertencia CSS: El color de primer plano se hereda de nav ul a */
 nav ul a:hover {
-    background-color: #92C8E3;
+    background-color: #56a0d3;
 }
 
 /* 0,1,0 */
-/* Advertencia CSS: El color de primer plano se hereda de ul */
 .active {
-    background-color: #92C8E3;
-    font-weight: bold;
+    background-color: #56a0d3; 
+    color: #000000; 
 }
 
 /* Estilos del contenido principal */
