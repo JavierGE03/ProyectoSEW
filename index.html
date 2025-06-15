@@ -27,29 +27,22 @@
         <h1>Gijón</h1>
         <section>
             <h2>Descubre Gijón</h2>
-            <article>
-                <button>◄</button>
-                <figure>
-                    <img src="multimedia/Plaza_Mayor.jpg" alt="Plaza Mayor de Gijón">
-                    <figcaption>Centro histórico y corazón de la ciudad</figcaption>
-                </figure>
-                <button>►</button>
-            </article>
+            <!-- El carrusel se insertará aquí mediante JavaScript -->
         </section>
 
         <section>
             <h2>Noticias de Gijón</h2>
-            <article>
-                <!-- Las noticias se insertarán aquí -->
-            </article>
+            <!-- Las noticias se insertarán aquí mediante JavaScript -->
         </section>
     </main>
     
     <script>
         // Inicializar componentes cuando el DOM esté listo
-        $(document).ready(() => {
-            new Carrusel('main > section:first-of-type article');
-            new Noticias('main > section:nth-child(3) article');
+        document.addEventListener('DOMContentLoaded', function() {
+            // Inicializar carrusel en la primera sección
+            new Carrusel(document.querySelector('main section:first-of-type'));
+            // Inicializar noticias en la segunda sección
+            new Noticias(document.querySelector('main section:last-of-type'));
         });
     </script>
 </body>

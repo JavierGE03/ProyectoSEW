@@ -1,5 +1,5 @@
 class Carrusel {
-    constructor(selector) {
+    constructor(seccion) {
         this.imagenes = [
             {
                 src: "multimedia/Plaza_Mayor.jpg",
@@ -28,36 +28,75 @@ class Carrusel {
             }
         ];
         this.indiceActual = 0;
-        this.contenedor = document.querySelector(selector);
+        this.seccion = seccion;
+        this.crearEstructura();
         this.inicializar();
     }
 
+    crearEstructura() {
+        // Crear artículo con su encabezado
+        const articulo = document.createElement('article');
+        
+        // Crear botones de navegación
+        const btnAnterior = document.createElement('button');
+        btnAnterior.textContent = "◄";
+        btnAnterior.setAttribute('type', 'button');
+        
+        const btnSiguiente = document.createElement('button');
+        btnSiguiente.textContent = "►";
+        btnSiguiente.setAttribute('type', 'button');
+        
+        // Crear figura con imagen y leyenda
+        const figura = document.createElement('figure');
+        const imagen = document.createElement('img');
+        imagen.src = this.imagenes[0].src;
+        imagen.alt = this.imagenes[0].alt;
+        
+        const leyenda = document.createElement('figcaption');
+        leyenda.textContent = this.imagenes[0].descripcion;
+        
+        figura.appendChild(imagen);
+        figura.appendChild(leyenda);
+        
+        // Ensamblar el carrusel
+        articulo.appendChild(btnAnterior);
+        articulo.appendChild(figura);
+        articulo.appendChild(btnSiguiente);
+        
+        // Añadir a la sección
+        this.seccion.appendChild(articulo);
+        
+        // Guardar referencias
+        this.btnAnterior = btnAnterior;
+        this.btnSiguiente = btnSiguiente;
+        this.imagen = imagen;
+        this.leyenda = leyenda;
+    }
+    
     inicializar() {
-        const btnAnterior = this.contenedor.querySelector('button:first-of-type');
-        const btnSiguiente = this.contenedor.querySelector('button:last-of-type');
+        this.btnAnterior.addEventListener('click', () => {
+            this.mostrarAnterior();
+        });
         
-        btnAnterior.addEventListener('click', () => this.mostrarAnterior());
-        btnSiguiente.addEventListener('click', () => this.mostrarSiguiente());
+        this.btnSiguiente.addEventListener('click', () => {
+            this.mostrarSiguiente();
+        });
     }
-
-    mostrarImagen(indice) {
-        const imagen = this.imagenes[indice];
-        const figure = this.contenedor.querySelector('figure');
-        const img = figure.querySelector('img');
-        const figcaption = figure.querySelector('figcaption');
-        
-        img.src = imagen.src;
-        img.alt = imagen.alt;
-        figcaption.textContent = imagen.descripcion;
-    }
-
-    mostrarSiguiente() {
-        this.indiceActual = (this.indiceActual + 1) % this.imagenes.length;
-        this.mostrarImagen(this.indiceActual);
-    }
-
+    
     mostrarAnterior() {
         this.indiceActual = (this.indiceActual - 1 + this.imagenes.length) % this.imagenes.length;
-        this.mostrarImagen(this.indiceActual);
+        this.actualizarImagen();
+    }
+    
+    mostrarSiguiente() {
+        this.indiceActual = (this.indiceActual + 1) % this.imagenes.length;
+        this.actualizarImagen();
+    }
+    
+    actualizarImagen() {
+        const imagenActual = this.imagenes[this.indiceActual];
+        this.imagen.src = imagenActual.src;
+        this.imagen.alt = imagenActual.alt;
+        this.leyenda.textContent = imagenActual.descripcion;
     }
 }

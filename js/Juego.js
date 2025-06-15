@@ -127,7 +127,12 @@ class Juego {
     }
 
     iniciar() {
-        this.contenedor = document.querySelector('main > section > section');
+        const seccionPrincipal = document.querySelector('main > section');
+    
+        const seccionJuego = document.createElement('section');
+        seccionPrincipal.appendChild(seccionJuego);
+        
+        this.contenedor = seccionJuego;        
         this.mostrarPregunta();
     }
 

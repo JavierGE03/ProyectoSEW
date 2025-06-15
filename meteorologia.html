@@ -26,21 +26,18 @@
         <h1>Meteorología en Gijón</h1>
         <section>
             <h2>Tiempo Actual</h2>
-            <article>
-                <!-- El tiempo actual se insertará aquí mediante JavaScript -->
-            </article>
+            
         </section>
         <section>
             <h2>Previsión para los próximos 7 días</h2>
-            <article>
-                <!-- La previsión se insertará aquí mediante JavaScript -->
-            </article>
+            
         </section>
     </main>
     <script>
         // Inicializar componentes cuando el DOM esté listo
         $(document).ready(() => {
-            new Meteorologia('body > main > section:nth-child(2) > article', 'body > main > section:nth-child(3) > article');
+            new Meteorologia('body > main > section:nth-child(2)', 'body > main > section:nth-child(3)');
+
         });
     </script>
 </body>

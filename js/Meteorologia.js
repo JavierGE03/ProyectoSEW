@@ -2,7 +2,21 @@ class Meteorologia {
     constructor(selectorActual, selectorPrevision) {
         this.contenedorActual = $(selectorActual);
         this.contenedorPrevision = $(selectorPrevision);
+        this.crearEstructura();
         this.inicializar();
+    }
+    crearEstructura() {
+        // Crear articles para cada sección
+        const articleActual = document.createElement('article');
+        const articlePrevision = document.createElement('article');
+
+        // Añadir los articles a sus respectivas secciones
+        this.contenedorActual.append(articleActual);
+        this.contenedorPrevision.append(articlePrevision);
+
+        // Actualizar los selectores para apuntar a los nuevos articles
+        this.contenedorActual = this.contenedorActual.find('article');
+        this.contenedorPrevision = this.contenedorPrevision.find('article');
     }
 
     async inicializar() {
